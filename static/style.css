@@ -1,0 +1,548 @@
+/* =================================================================
+   AI GYM COACH -- Premium Streamlit Theme
+   Designer: Vaishnavi's AI Gym Coach UI
+   ================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* -- TOKENS -------------------------------------------------------- */
+:root {
+  --bg:          #0D0F14;
+  --bg2:         #161923;
+  --bg3:         #1C2030;
+  --surface:     rgba(255,255,255,0.04);
+  --border:      rgba(255,255,255,0.08);
+  --accent:      #7C3AED;
+  --accent-soft: rgba(124,58,237,0.15);
+  --accent-glow: rgba(124,58,237,0.35);
+  --accent2:     #A78BFA;
+  --success:     #10B981;
+  --warning:     #F59E0B;
+  --danger:      #EF4444;
+  --white:       #F4F5F7;
+  --muted:       #6B7280;
+  --dim:         rgba(244,245,247,0.55);
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+  --font-body:    'Inter', sans-serif;
+  --radius:       8px;
+  --radius-sm:    4px;
+}
+
+/* -- BASE RESET ---------------------------------------------------- */
+html, body, [data-testid="stAppViewContainer"] {
+  background-color: var(--bg) !important;
+  color: var(--white) !important;
+  font-family: var(--font-body) !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+[data-testid="stAppViewContainer"] {
+  background: var(--bg) !important;
+  background-image:
+    radial-gradient(ellipse 60% 50% at 80% 0%, rgba(124,58,237,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 10% 90%, rgba(124,58,237,0.04) 0%, transparent 60%) !important;
+}
+
+[data-testid="stHeader"] {
+  background: rgba(13,15,20,0.85) !important;
+  backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid var(--border) !important;
+}
+
+/* -- MAIN CONTENT AREA --------------------------------------------- */
+[data-testid="stMain"] > div,
+.block-container {
+  padding: 2rem 2.5rem !important;
+  max-width: 900px !important;
+}
+
+/* -- PAGE TITLE ---------------------------------------------------- */
+h1 {
+  font-family: var(--font-display) !important;
+  font-size: 2rem !important;
+  font-weight: 700 !important;
+  color: var(--white) !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.1 !important;
+  margin-bottom: 0.25rem !important;
+}
+
+h2 {
+  font-family: var(--font-display) !important;
+  font-weight: 600 !important;
+  color: var(--white) !important;
+  letter-spacing: -0.01em !important;
+}
+
+h3, h4 {
+  font-family: var(--font-display) !important;
+  font-weight: 600 !important;
+  color: var(--white) !important;
+}
+
+/* st.markdown h4 (####) */
+[data-testid="stMarkdownContainer"] h4 {
+  font-family: var(--font-display) !important;
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: var(--muted) !important;
+  margin-top: 2rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+p, [data-testid="stMarkdownContainer"] p {
+  color: var(--dim) !important;
+  font-size: 0.92rem !important;
+  line-height: 1.7 !important;
+}
+
+/* -- SIDEBAR ------------------------------------------------------- */
+[data-testid="stSidebar"] {
+  background: var(--bg2) !important;
+  border-right: 1px solid var(--border) !important;
+  min-width: 280px !important;
+}
+
+[data-testid="stSidebar"] > div:first-child {
+  padding: 1.5rem 1.25rem !important;
+}
+
+[data-testid="stSidebar"] h1 {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+[data-testid="stSidebar"] .stCaption,
+[data-testid="stSidebar"] [data-testid="stCaptionContainer"] {
+  font-size: 0.72rem !important;
+  letter-spacing: 0.05em !important;
+  color: var(--muted) !important;
+  background: var(--accent-soft) !important;
+  border: 1px solid rgba(124,58,237,0.25) !important;
+  border-radius: 100px !important;
+  padding: 0.3rem 0.75rem !important;
+  display: inline-block !important;
+  margin-top: 0.25rem !important;
+}
+
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--muted) !important;
+  margin-bottom: 1rem !important;
+}
+
+[data-testid="stSidebar"] hr {
+  border-color: var(--border) !important;
+  margin: 1.25rem 0 !important;
+}
+
+/* -- FORM CONTROLS ------------------------------------------------- */
+
+.stSelectbox label,
+.stNumberInput label,
+.stTextInput label {
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: var(--muted) !important;
+  margin-bottom: 0.4rem !important;
+}
+
+[data-testid="stSelectbox"] > div > div {
+  background: var(--bg3) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+  color: var(--white) !important;
+  transition: border-color 0.2s !important;
+}
+
+[data-testid="stSelectbox"] > div > div:hover,
+[data-testid="stSelectbox"] > div > div:focus-within {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 2px var(--accent-soft) !important;
+}
+
+[data-testid="stNumberInput"] input {
+  background: var(--bg3) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+  color: var(--white) !important;
+  font-family: var(--font-display) !important;
+  font-weight: 600 !important;
+  transition: border-color 0.2s, box-shadow 0.2s !important;
+}
+
+[data-testid="stNumberInput"] input:focus {
+  border-color: var(--accent) !important;
+  box-shadow: 0 0 0 2px var(--accent-soft) !important;
+  outline: none !important;
+}
+
+[data-testid="stNumberInput"] button {
+  background: var(--bg3) !important;
+  border: 1px solid var(--border) !important;
+  color: var(--muted) !important;
+  transition: color 0.2s, background 0.2s !important;
+}
+
+[data-testid="stNumberInput"] button:hover {
+  background: var(--accent-soft) !important;
+  color: var(--accent2) !important;
+}
+
+/* -- BUTTONS ------------------------------------------------------- */
+
+[data-testid="stButton"] > button {
+  background: linear-gradient(135deg, var(--accent) 0%, #6D28D9 100%) !important;
+  border: none !important;
+  color: #fff !important;
+  font-family: var(--font-display) !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  border-radius: var(--radius-sm) !important;
+  padding: 0.7rem 1.5rem !important;
+  transition: transform 0.2s, box-shadow 0.2s !important;
+  box-shadow: 0 4px 20px var(--accent-glow) !important;
+  width: 100% !important;
+}
+
+[data-testid="stButton"] > button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 30px var(--accent-glow) !important;
+}
+
+[data-testid="stButton"] > button:active {
+  transform: translateY(0) !important;
+}
+
+/* End Workout button -- danger tint */
+[data-testid="stButton"] > button[kind="secondary"] {
+  background: rgba(239,68,68,0.1) !important;
+  border: 1px solid rgba(239,68,68,0.3) !important;
+  color: #FCA5A5 !important;
+  box-shadow: none !important;
+}
+
+[data-testid="stButton"] > button[kind="secondary"]:hover {
+  background: rgba(239,68,68,0.2) !important;
+  border-color: var(--danger) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 16px rgba(239,68,68,0.2) !important;
+}
+
+/* -- INFO / SUCCESS / ALERTS --------------------------------------- */
+[data-testid="stInfo"] {
+  background: var(--accent-soft) !important;
+  border: 1px solid rgba(124,58,237,0.3) !important;
+  border-radius: var(--radius) !important;
+  color: var(--accent2) !important;
+  font-size: 0.85rem !important;
+  padding: 0.75rem 1rem !important;
+}
+
+[data-testid="stInfo"] p {
+  color: var(--accent2) !important;
+}
+
+[data-testid="stSuccess"] {
+  background: rgba(16,185,129,0.08) !important;
+  border: 1px solid rgba(16,185,129,0.25) !important;
+  border-radius: var(--radius) !important;
+  padding: 1rem 1.25rem !important;
+}
+
+[data-testid="stSuccess"] p {
+  color: #6EE7B7 !important;
+  font-size: 0.9rem !important;
+}
+
+/* -- METRICS ------------------------------------------------------- */
+[data-testid="stMetric"] {
+  background: var(--bg3) !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  padding: 1rem 1.1rem !important;
+  transition: border-color 0.2s !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+[data-testid="stMetric"]::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  opacity: 0.6;
+}
+
+[data-testid="stMetric"]:hover {
+  border-color: rgba(124,58,237,0.4) !important;
+}
+
+[data-testid="stMetricLabel"] {
+  font-size: 0.65rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--muted) !important;
+}
+
+[data-testid="stMetricValue"] {
+  font-family: var(--font-display) !important;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  color: var(--white) !important;
+  line-height: 1.2 !important;
+}
+
+/* -- DIVIDER ------------------------------------------------------- */
+hr {
+  border: none !important;
+  border-top: 1px solid var(--border) !important;
+  margin: 1.5rem 0 !important;
+}
+
+/* -- TABLE (Workout History) --------------------------------------- */
+[data-testid="stTable"] table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  font-size: 0.85rem !important;
+}
+
+[data-testid="stTable"] th {
+  font-family: var(--font-display) !important;
+  font-size: 0.68rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  color: var(--muted) !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding: 0.75rem 1rem !important;
+  background: var(--bg3) !important;
+  text-align: left !important;
+}
+
+[data-testid="stTable"] td {
+  padding: 0.8rem 1rem !important;
+  border-bottom: 1px solid var(--border) !important;
+  color: var(--dim) !important;
+  font-size: 0.85rem !important;
+}
+
+[data-testid="stTable"] tr:hover td {
+  background: var(--surface) !important;
+  color: var(--white) !important;
+}
+
+[data-testid="stTable"] tr:last-child td {
+  border-bottom: none !important;
+}
+
+[data-testid="stTable"] {
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius) !important;
+  overflow: hidden !important;
+  background: var(--bg2) !important;
+}
+
+/* -- WEBRTC VIDEO CONTAINER ---------------------------------------- */
+/* Signature: glowing violet ring = live broadcast feel */
+[data-testid="stCustomComponentV1"],
+iframe[title*="streamlit"],
+.stWebRtcVideoContainer,
+video {
+  border-radius: var(--radius) !important;
+  overflow: hidden !important;
+}
+
+div[data-testid="stCustomComponentV1"] {
+  background: var(--bg2) !important;
+  border: 1px solid rgba(124,58,237,0.4) !important;
+  border-radius: var(--radius) !important;
+  box-shadow:
+    0 0 0 1px rgba(124,58,237,0.15),
+    0 0 30px rgba(124,58,237,0.12),
+    0 0 80px rgba(124,58,237,0.06) !important;
+  position: relative !important;
+  animation: live-ring 3s ease-in-out infinite !important;
+}
+
+@keyframes live-ring {
+  0%, 100% {
+    box-shadow:
+      0 0 0 1px rgba(124,58,237,0.15),
+      0 0 30px rgba(124,58,237,0.12),
+      0 0 80px rgba(124,58,237,0.06);
+  }
+  50% {
+    box-shadow:
+      0 0 0 1px rgba(124,58,237,0.3),
+      0 0 40px rgba(124,58,237,0.2),
+      0 0 100px rgba(124,58,237,0.1);
+  }
+}
+
+/* -- SCROLLBAR ----------------------------------------------------- */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(124,58,237,0.35);
+  border-radius: 100px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* -- EMPTY STATE PLACEHOLDER --------------------------------------- */
+.gym-empty-state {
+  border: 1px dashed rgba(124,58,237,0.3) !important;
+  border-radius: var(--radius) !important;
+  padding: 3.5rem 2rem !important;
+  text-align: center !important;
+  background: var(--accent-soft) !important;
+  margin: 1.5rem 0 2rem !important;
+}
+
+.gym-empty-state h2 {
+  font-family: var(--font-display) !important;
+  font-size: 1.2rem !important;
+  color: var(--accent2) !important;
+  margin-bottom: 0.6rem !important;
+  font-weight: 600 !important;
+}
+
+.gym-empty-state p {
+  font-size: 0.9rem !important;
+  color: var(--muted) !important;
+  line-height: 1.65 !important;
+  max-width: 380px !important;
+  margin: 0 auto !important;
+}
+
+/* -- COACH FEEDBACK BADGE ------------------------------------------ */
+.coach-badge {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(16,185,129,0.07);
+  border: 1px solid rgba(16,185,129,0.2);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: 0.5rem 0 1rem;
+  width: 100%;
+}
+
+.coach-badge-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.coach-badge-text {
+  font-size: 0.88rem;
+  color: #6EE7B7;
+  line-height: 1.55;
+}
+
+/* -- HEADER EYEBROW ------------------------------------------------ */
+.page-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  color: var(--accent2);
+  text-transform: uppercase;
+  background: var(--accent-soft);
+  border: 1px solid rgba(124,58,237,0.25);
+  border-radius: 100px;
+  padding: 0.3rem 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-eyebrow-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent2);
+  animation: dot-pulse 2s infinite;
+}
+
+@keyframes dot-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* -- LIVE STATUS BANNER -------------------------------------------- */
+.live-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(124,58,237,0.08);
+  border: 1px solid rgba(124,58,237,0.2);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  font-weight: 600;
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #A78BFA;
+  animation: live-pulse 1.5s infinite;
+}
+
+@keyframes live-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(167,139,250,0.4);
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 5px rgba(167,139,250,0);
+  }
+}
+
+/* -- SECTION LABEL ------------------------------------------------- */
+.section-label {
+  font-size: 0.67rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+/* -- RESPONSIVE ---------------------------------------------------- */
+@media (max-width: 768px) {
+  .block-container { padding: 1rem 1.25rem !important; }
+  [data-testid="stMetricValue"] { font-size: 1.2rem !important; }
+}
+
+/* -- REDUCED MOTION ------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  [data-testid="stCustomComponentV1"],
+  .live-dot,
+  .page-eyebrow-dot { animation: none !important; }
+}
